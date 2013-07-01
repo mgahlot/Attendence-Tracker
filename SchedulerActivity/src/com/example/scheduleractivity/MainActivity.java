@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 			AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
 			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, date
-					.getTimeInMillis(), AlarmManager.INTERVAL_HALF_HOUR,
+					.getTimeInMillis(), AlarmManager.INTERVAL_DAY,
 					PendingIntent.getBroadcast(this, 1, intentAlarm,
 							PendingIntent.FLAG_UPDATE_CURRENT));
 		}

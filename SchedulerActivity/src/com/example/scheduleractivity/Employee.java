@@ -5,6 +5,7 @@ public class Employee {
 	private String contactName;
 	private String message;
 	private String status;
+	private String messageTime;
 	
 	public String getContactNo() {
 		return contactNo;
@@ -29,6 +30,12 @@ public class Employee {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}	
+	public String getMessageTime() {
+		return messageTime;
+	}
+	public void setMessageTime(String messageTime) {
+		this.messageTime = messageTime;
 	}
 	@Override
 	public String toString() {

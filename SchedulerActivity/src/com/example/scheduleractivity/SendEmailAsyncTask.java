@@ -43,11 +43,11 @@ public class SendEmailAsyncTask extends AsyncTask<Void, Void, Void>{
 		} else {
 			email.set_body(getDefaultFormat());
 		}				
-		String[] str = new String[1];
+		String[] str = new String[4];
 		str[0] = "mg10590@gmail.com";
-		/*str[1] = "sandeep.shitole@capgemini.com";
-		str[2] = "vaishali.deshmukh@capgemini.com";
-		str[3] = "ankit.jajoo@capgemini.com";*/
+		str[1] = "sandeep.shitole@capgemini.com";
+		str[2] = "chinmay.arankalle@capgemini.com";
+		str[3] = "ankit.jajoo@capgemini.com";
 		email.set_to(str);
 		return email;
 	}
@@ -63,9 +63,10 @@ public class SendEmailAsyncTask extends AsyncTask<Void, Void, Void>{
 		formatMessage.append("<thead>");
 		formatMessage.append("<tr align='center'>");
 		formatMessage.append("<td width='7%'> Sr. No </td>");
-		formatMessage.append("<td width='14%'> Contact No </td>");
+		formatMessage.append("<td width='13%'> Contact No </td>");
 		formatMessage.append("<td width='16%'> Name </td>");
-		formatMessage.append("<td width='50%'> Message </td>");
+		formatMessage.append("<td width='42%'> Message </td>");
+		formatMessage.append("<td width='8%'> Time </td>");
 		formatMessage.append("<td width='8%'> Status </td>");
 		formatMessage.append("</tr>");
 		formatMessage.append("</thead>");
@@ -74,9 +75,10 @@ public class SendEmailAsyncTask extends AsyncTask<Void, Void, Void>{
 		for(Employee att : employeeList) {
 			formatMessage.append("<tr align='center'>");
 			formatMessage.append("<td>" + ++serialNo + "</td>");
-			formatMessage.append("<td>" + att.getContactNo() + "</td>");
+			formatMessage.append("<td nowrap>" + att.getContactNo() + "</td>");
 			formatMessage.append("<td>" + att.getContactName() + "</td>");
 			formatMessage.append("<td align='left'>" + att.getMessage() + "</td>");
+			formatMessage.append("<td nowrap>" + att.getMessageTime() + "</td>");
 			formatMessage.append("<td>" + att.getStatus() + "</td>");
 			formatMessage.append("</tr>");
 		}
